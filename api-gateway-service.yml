@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: component-processing-service
+          uri: lb://component-processing-service
+          predicates:
+            - Path=/component-process/**
+          filters:
+            - GateFilter
+
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+
+jwt:
+  secret: SECRET_KEY

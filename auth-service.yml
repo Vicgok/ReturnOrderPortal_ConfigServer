@@ -11,4 +11,4 @@ spring:
 
 jwt:
   secret: SECRET_KEY
-  validity: 10 * 1000 * 60 * 60L
+  validity: (java.lang.long)10 * 1000 * 60 * 60L

@@ -15,4 +15,4 @@ spring:
             - Path=/auth/**
 
 jwt:
-  secret: SECRET_KEYY
+  secret: SECRET_KEY
